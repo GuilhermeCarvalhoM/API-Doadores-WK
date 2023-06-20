@@ -35,7 +35,7 @@ public interface Doadores extends JpaRepository<com.apiWK.Entity.Doador, Integer
 
     @Query(value = "SELECT receptor.tipo_sanguineo AS tipoReceptor, COUNT(DISTINCT doador.id) AS quantidadeDoadores "
             + "FROM doador AS receptor "
-            + "INNER JOIN pessoa AS doador ON ("
+            + "INNER JOIN doador AS doador ON ("
             + "(receptor.tipo_sanguineo = 'A+' AND doador.tipo_sanguineo IN ('AB+', 'A+')) OR "
             + "(receptor.tipo_sanguineo = 'A-' AND doador.tipo_sanguineo IN ('A+', 'A-', 'AB+', 'AB-')) OR "
             + "(receptor.tipo_sanguineo = 'B+' AND doador.tipo_sanguineo IN ('B+', 'AB+')) OR "
